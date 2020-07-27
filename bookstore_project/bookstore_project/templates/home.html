@@ -1,0 +1,43 @@
+{% extends '_base.html'%}
+{% load  static%}
+{% block title %}Home{% endblock title%}
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Choose your favourite books</h1>
+<p>Hi {{ user.username }}</p>
+<section id="book-section">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+<div class="card">
+    <img class="card-img-top img-fluid" height="200px" src="{% static 'images/django.png' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Django For Professionals</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+<div class="col-lg-3 col-sm-6">
+    <div class="card">
+        <img class="card-img-top img-fluid" height="200px"  src="{% static 'images/django.png' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Django For Professionals</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+
+<a href="{%url 'logout' %}">Log Out</a>
+{% else %}
+<p>You are  not logged in</p>
+<meta http-equiv="REFRESH" content="0;url={% url 'login' %}">
+<a href="{% url 'login' %}">Log in</a>
+
+
+
+{%  endif %}
+{% endblock content%}
