@@ -21,12 +21,13 @@ urlpatterns = [
     # default
     path('admin/', admin.site.urls),
     
-    path('accounts/',include('django.contrib.auth.urls')),
-    
+    # path('accounts/',include('django.contrib.auth.urls')),
+    path('accounts/',include('allauth.urls')),
 
     #  local apps
     path('',include('pages.urls')),
-    path('accounts/',include('users.urls'))
+    # path('accounts/',include('users.urls'))
+    path("books/",include('books.urls'))
     
 ]
 

@@ -31,11 +31,11 @@
 </div>
 </section>
 
-<a href="{%url 'logout' %}">Log Out</a>
+<a href="{%url 'account_logout' %}">Log Out</a>
 {% else %}
 <p>You are  not logged in</p>
-<meta http-equiv="REFRESH" content="0;url={% url 'login' %}">
-<a href="{% url 'login' %}">Log in</a>
+<meta http-equiv="REFRESH" content="0;url={% url 'account_login' %}">
+<a href="{% url 'account_login' %}">Log in</a>
 
 
 
